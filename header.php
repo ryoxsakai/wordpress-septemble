@@ -72,9 +72,12 @@
 
 </script>
 <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/socialcount.js" type="text/javascript"></script>
 <script>
 $(document).ready(function(){
+  hljs.initHighlightingOnLoad();
   $('a[href^=#]').click(function() {
     var speed = 400;// ミリ秒
     var href= $(this).attr("href");
@@ -133,6 +136,7 @@ else if(navigator.userAgent.indexOf('iPad') > -1)
 </script>
 <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/socialcount.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/jquery.waypoints.min.js" type="text/javascript"></script>
 <script>
 $(document).ready(function(){
   $('a[href^=#]').click(function() {
@@ -144,6 +148,16 @@ $(document).ready(function(){
     return false;
   });
   var a = 10;
+  $(".the_body").waypoint({
+    handler: function(direction) {
+      if (direction == 'down') { //スクロールが下方の場合実行
+        $("#header").addClass('scroll');
+        $("#header.scroll").hide().slideDown(500);
+      }else if(direction == 'up'){　//スクロールが上方の場合実行
+        $("#header").slideUp(500);
+      }// if end
+    }
+  });
   $(".article_inner img").css('maxWidth','100%');
   $('.article_inner img, .thumbnail img').removeAttr('height');
   $('.article_inner ul').addClass('fa-ul');
@@ -167,6 +181,13 @@ else if(navigator.userAgent.indexOf('iPad') > -1)
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(''); ?>>
+
+<div id="header">
+  <div class="parent">
+    <div><a href="http://sakairyo.tokyo/">RYO OF THE DAY</a></div>
+    <div><a class="proflink" href="/author/"><span><i class="fa fa-hand-o-right"></i> PROFILE!</span></a></div>
+  </div>
+</div>
 
 <header class="center margin-auto">
   <img id="identification" src="http://gadgtwit.appspot.com/twicon/x93mg/original" />
