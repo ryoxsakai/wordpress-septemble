@@ -1,0 +1,464 @@
+@charset "UTF-8";
+/*
+Theme Name: Septemble
+Description: Ryo SAKAI
+Author: Ryo SAKAI
+Author URI: http://sakairyo.tokyo/
+Version: 1.0
+License: GNU General Public License
+*/
+
+
+/*----------------------------------------
+
+   1. Font Imports
+
+----------------------------------------*/
+
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+@font-face{
+  font-family:'yasashisaGothicHand';
+  src:url(http://sakairyo.tokyo/yasashisagothichand.woff), url(http://sakairyo.tokyo/yasashisagothichand.eot);
+}
+
+/*Font Choice*/
+
+.font-dosis{
+  font-family: 'Dosis', sans-serif;
+}
+
+/*----------------------------------------
+
+   2. Layouts
+
+----------------------------------------*/
+
+body{
+  margin:0;
+  padding:0;
+  font-family:'yasashisaGothicHand', sans-serif !important;
+}
+
+body *{
+  box-sizing:border-box;
+}
+
+.the_body{
+  background:whitesmoke;
+  border-top:solid 1px gainsboro;
+}
+
+.the_wrap{
+  width:960px;
+  text-align:left;
+  display:-webkit-flex;
+  display:flex;
+  justify-content:space-between;
+  -webkit-justify-content:space-between;
+  padding:10px 0;
+}
+
+.the_content{
+  width:660px;
+}
+
+.the_sidebar{
+  width:280px;
+}
+
+.the_card{
+  background:white;
+  box-shadow:0 0 2px rgba(0,0,0,0.3);
+  margin-bottom:15px;
+}
+
+.the_article{
+  margin:10px;
+}
+
+/*----------------------------------------
+
+   3. Components & Parts
+
+----------------------------------------*/
+
+a{
+  transition:0.2s;
+  color:#0060e6;
+  text-decoration:none;
+}
+
+a:hover{
+  color:deeppink;
+}
+
+blockquote{
+  margin:5px 0;
+  padding:5px 10px;
+  background:whitesmoke;
+  border-radius:10px;
+}
+
+header{
+  padding:15px;
+}
+
+.the_card div.colorbar, .the_card div.colorbar div{
+  min-height:2px;
+  width:100%;
+}
+
+.the_card div.colorbar div:nth-child(1){
+  background:red;
+}
+
+.the_card div.colorbar div:nth-child(2){
+  background:orange;
+}
+
+.the_card div.colorbar div:nth-child(3){
+  background:yellow;
+}
+
+.the_card div.colorbar div:nth-child(4){
+  background:limegreen;
+}
+
+.the_card div.colorbar div:nth-child(5){
+  background:navy;
+}
+
+p.post-meta span{
+  margin:0 4px;
+  padding:4px 16px;
+  border-radius:1em;
+  background:whitesmoke;
+  font-size:12px;
+}
+
+p.post-meta span fa{
+  margin-right:6px;
+}
+
+.the_socialcount{
+  font-size:12px;
+  padding:10px 20px;
+  font-family: 'Titillium Web', sans-serif;
+  background:whitesmoke;
+  color:white;
+  border-radius:2px;
+  letter-spacing:2px;
+  vertical-align:middle;
+  text-align:center;
+  line-height:2em;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.2);
+}
+
+  .the_socialcount span{
+    font-size:180%;
+  }
+
+  .the_socialcount > div{
+    margin:0 10px;
+    padding:2px 10px;
+    display:inline-block;
+    color:white;
+    border-radius:3px;
+    border-bottom:2px solid navy;
+    vertical-align:middle;
+  }
+
+    .the_socialcount > div:hover{
+      opacity:0.7;
+    }
+
+    .the_socialcount > div > a{
+      color:white;
+    }
+
+  .the_socialcount .likes{
+    background:#3b5998;
+  }
+
+  .the_socialcount .tweets{
+    background:#55acee;
+  }
+
+  .the_socialcount .pocket{
+    background:#d3505a;
+    border-bottom:2px solid darkred;
+  }
+
+  .the_socialcount .hatena{
+    background:lightskyblue;
+  }
+
+  .the_socialcount .gplus{
+    background:#dd4b39;
+    border-bottom:2px solid darkred;
+  }
+
+.the_content p{
+  color:#333;
+  font-size:85%;
+  line-height:2em;
+}
+
+.the_content strong{
+  color:deeppink; 
+}
+
+.the_more{
+  margin:10px -10px 15px 0;
+}
+
+.more-link:before{
+  margin:10px 0;
+}
+
+.more-link{
+  transition:0.5s;
+  background:#2980b9;
+  padding:10px 20px;
+  color:white;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.5);
+  text-decoration:none;
+  border-radius:30px 0 0 30px;
+}
+
+.more-link:hover{
+  padding-right:50px;
+  background:lightblue;
+  border-right:1px solid #2980b9;
+  color:dodgerblue;
+  text-shadow:1px 1px 1px rgba(255,255,255,0.5);
+}
+
+#sidebar ul, #sidebar ul li{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.the_sidebar h2{
+  margin-top:10px;
+  font-family: 'Dosis', sans-serif;
+  letter-spacing:2px;
+}
+
+.the_sidebar h2:first-letter{
+  color:navy;
+}
+
+.the_sidebar > #sidebar > ul > li{
+  margin-bottom:10px;
+  padding:10px 10px;
+  background:white;
+  box-shadow:0 0 2px rgba(0,0,0,0.3);
+  font-size:12px;
+}
+
+.the_sidebar > #sidebar > ul > li li a{
+  padding:5px 0;
+  display:block;
+}
+
+.the_sidebar > #sidebar > ul > li:nth-child(1){
+  border-bottom:2px solid red;
+}
+
+.the_sidebar > #sidebar > ul > li:nth-child(2){
+  border-bottom:2px solid orange;
+}
+
+.the_sidebar > #sidebar > ul > li:nth-child(3){
+  border-bottom:2px solid yellow;
+}
+
+.the_sidebar > #sidebar > ul > li:nth-child(4){
+  border-bottom:2px solid limegreen;
+}
+
+.the_sidebar > #sidebar > ul > li:nth-child(5){
+  border-bottom:2px solid navy;
+}
+
+/*----------------------------------------
+
+   4. Header Typography
+
+----------------------------------------*/
+
+h1, h2, h3, h4, h5, h6{
+  display:block;
+  margin:0;
+  padding:0;
+}
+
+h1#title{
+  font-family: 'Dosis', sans-serif;
+  text-shadow:0 0 3px rgba(0,0,0,0.2)
+}
+
+.the_content h3{
+  font-family: 'Dosis', sans-serif;
+  letter-spacing:2px;
+  border-left:1px solid #1abc9c;
+  padding-left:10px;
+}
+
+  .the_content h3:first-letter{
+    color:#16a085;
+  }
+
+.the_content h4{
+  font-family: 'Dosis', sans-serif;
+  letter-spacing:2px;
+  border-left:1px solid #3498db;
+  padding-left:10px;
+}
+
+  .the_content h4:first-letter{
+    color:#2980b9;
+  }
+
+.the_content h5{
+  font-family: 'Dosis', sans-serif;
+  letter-spacing:2px;
+  border-bottom:1px solid mediumorchid;
+  padding-left:2px;
+}
+
+  .the_content h5:first-letter{
+    color:darkmagenta;
+  }
+
+/*----------------------------------------
+
+   6. Images
+
+----------------------------------------*/
+
+img{
+  max-width:100%;
+}
+
+img[href*="pixel.wp.com"]{
+  display:none;
+}
+
+img#identification{
+  margin-bottom:15px;
+  width:100px;
+  height:100px;
+  border-radius:50px;
+}
+
+.the_thumbnail img{
+  max-width:100%;
+}
+
+.the_minithumbnail{
+  border-radius:6px;
+}
+
+/*----------------------------------------
+
+   7. Functions
+
+----------------------------------------*/
+
+/*orientation*/
+
+.left{
+  text-align:left;
+}
+
+.center{
+  text-align:center;
+}
+
+.right{
+  text-align:right;
+}
+
+/*Flex*/
+
+.flex-space-between{
+  display:-webkit-flex;
+  display:flex;
+  justify-content:space-between;
+  -webkit-justify-content:space-between;
+}
+
+.flex-center{
+  display:-webkit-flex;
+  display:flex;
+  justify-content:center;
+  -webkit-justify-content:center;
+}
+
+/*Others*/
+
+.margin-auto{
+  margin:auto;
+}
+
+.clear{
+  clear:both;
+}
+
+.rainbow{
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip:text;
+  background-clip:text;
+}
+
+/*----------------------------------------
+
+   8. Media Queries
+
+----------------------------------------*/
+
+/* Tablet */
+
+@media screen and (max-width: 960px){
+  .the_content{
+    width:70%;
+  }
+
+  .the_sidebar{
+    width:28%;
+  }
+
+  .the_wrap{
+    width:100%;
+    padding:8px;
+  }
+}
+
+/* Smartphone */
+
+@media screen and (max-width: 600px){
+  .the_wrap, .the_content, .the_sidebar{
+    display:block;
+    width:100%;
+  }
+
+  .the_wrap{
+    padding:8px;
+  }
+
+  .the_socialcount > div{
+    margin:0 1px;
+    padding:2px 8px;
+    letter-spacing:0;
+    font-size:80%;
+  }
+}
