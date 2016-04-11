@@ -31,6 +31,26 @@ License: GNU General Public License
   font-family: 'Dosis', sans-serif;
 }
 
+.fa-twitter{
+  color:#55acee;
+}
+
+.fa-heart{
+  color:#e74c3c;
+}
+
+.fa-pencil{
+  color:#2c3e50;
+}
+
+.fa-arrow-circle-right{
+  color:#e67e22;
+}
+
+.fa-arrow-circle-up{
+  color:#27ae60;
+}
+
 /*----------------------------------------
 
    2. Layouts
@@ -53,7 +73,7 @@ body *{
 }
 
 .the_wrap{
-  width:960px;
+  width:1100px;
   text-align:left;
   display:-webkit-flex;
   display:flex;
@@ -63,7 +83,7 @@ body *{
 }
 
 .the_content{
-  width:660px;
+  width:800px;
 }
 
 .the_sidebar{
@@ -94,6 +114,15 @@ a{
 
 a:hover{
   color:deeppink;
+}
+
+::selection {
+  background:deeppink;
+  color:#fff;
+}
+::-moz-selection {
+  background:deeppink;
+  color:#fff;
 }
 
 blockquote{
@@ -159,7 +188,11 @@ p.post-meta span fa{
 }
 
   .the_socialcount span{
-    font-size:180%;
+    display:block;
+    margin-bottom:10px;
+    font-size:120%;
+    color:#446cb3;
+    font-weight:200%;
   }
 
   .the_socialcount > div{
@@ -287,6 +320,19 @@ p.post-meta span fa{
   border-bottom:2px solid navy;
 }
 
+p#ink{
+  text-align:right;
+}
+
+p#ink img{
+  width:200px;
+}
+
+iframe{
+  min-width:100%;
+  max-width:100%;
+}
+
 /*----------------------------------------
 
    4. Header Typography
@@ -302,6 +348,10 @@ h1, h2, h3, h4, h5, h6{
 h1#title{
   font-family: 'Dosis', sans-serif;
   text-shadow:0 0 3px rgba(0,0,0,0.2)
+}
+
+h2{
+  margin:30px auto;
 }
 
 .the_content h3{
@@ -402,6 +452,23 @@ img#identification{
   -webkit-justify-content:center;
 }
 
+.flex-double{
+  display:-webkit-flex;
+  display:flex;
+}
+
+.flex-double div{
+  flex:1;
+}
+
+.flex-double div:nth-child(1){
+  margin-right:5px;
+}
+
+.flex-double div:nth-child(2){
+  margin-left:5px;
+}
+
 /*Others*/
 
 .margin-auto{
@@ -422,13 +489,13 @@ img#identification{
 
 /*----------------------------------------
 
-   8. Media Queries
+   9. Media Queries
 
 ----------------------------------------*/
 
 /* Tablet */
 
-@media screen and (max-width: 960px){
+@media screen and (max-width: 1100px){
   .the_content{
     width:70%;
   }
@@ -461,4 +528,127 @@ img#identification{
     letter-spacing:0;
     font-size:80%;
   }
+
+  .flex-double{
+    flex-direction:column;
+  }
+
+  .flex-double div{
+    margin:0px !important;
+  }
 }
+
+/*----------------------------------------
+
+   8. KAEREBA & YOMEREBA
+
+----------------------------------------*/
+
+.booklink-box, .kaerebalink-box, .weblink-box{
+  margin:16px auto;
+  padding:10px;
+  overflow:hidden;
+  border:solid 1px #ccc;
+  box-shadow:0 0 2px rgba(0,0,0,0.3);
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+
+.booklink-image, .kaerebalink-image, .weblink-image {
+  margin:0;
+  -webkit-flex-direction: row; /* Safari */
+  flex-direction:         row;
+  flex:1;
+  -webkit-flex:1;
+}
+
+.booklink-image img, .kaerebalink-image img, .weblink-image img {
+  display:block;
+}
+
+.booklink-info, .kaerebalink-info, .weblink-info {
+  max-width:100%;
+  width:auto;
+  margin-left:20px;
+  overflow:hidden;
+  line-height:120%;
+  -webkit-flex-direction: row; /* Safari */
+  flex-direction:         row;
+  flex:4;
+  -webkit-flex:4;
+}
+
+.booklink-name, .kaerebalink-name, .weblink-name{
+  margin-bottom:8px;
+  font-size:120%;
+  line-height:120%;
+}
+
+.booklink-powered-date, .kaerebalink-powered-date, .weblink-powered-date{
+  margin-top:8px;
+  font-size:8pt;
+  line-height:120%;
+}
+
+.booklink-detail, .kaerebalink-detail{
+  font-size:10px;
+}
+
+.booklink-link2, .kaerebalink-link1{
+  width:100%;
+  margin-top:8px;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap:wrap;
+}
+
+.booklink-link2 div,.kaerebalink-link1 div{
+  width:50%;
+  margin:0 4px;
+  flex:1;
+  -webkit-flex:1;
+  justify-content:space-between;
+  -webkit-justify-content:space-between;
+  align-items:stretch;
+  -webkit-align-items:stretch;
+  background:#ccc;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+
+.booklink-link2 div a:hover,.kaerebalink-link1 div a:hover{
+  opacity:0.7;
+}
+
+.shoplinkamazon a, .shoplinkrakuten a, .shoplinkkindle a, .shoplinkyahoo a, .shoplinkyahooAuc a, .shoplinkkakakucom a, .shoplinkseven a{
+  align-items:stretch;
+  -webkit-align-items:stretch;
+  padding:2px;
+  display:box;
+  width:100%;
+  color:white;
+  border-radius:3px;
+  font-size:8px;
+  text-align:center;
+  box-align: center;
+  -webkit-box-align: center;
+  box-shadow:0 0 2px rgba(0,0,0,0.3);
+  letter-spacing:2px;
+}
+
+.shoplinkamazon a{
+  background:#f39c12;
+}
+
+.shoplinkkindle a{
+  background:#2c3e50;
+}
+
+.shoplinkrakuten a{
+  background:#c0392b;
+}
+
+.shoplinkseven a{
+  background:#27ae60;
+｝

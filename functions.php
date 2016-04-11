@@ -17,7 +17,7 @@ add_theme_support( 'menu' );
 
 register_nav_menu('header-navi', 'ヘッダーのナビゲーション');
 
-add_theme_support( 'post-thumbnails', array( 'post' ) );
+add_theme_support( 'post-thumbnails');
 set_post_thumbnail_size( 360, 720, true );
 
 define('HEADER_TEXTCOLOR', 'ffffff');
@@ -170,5 +170,22 @@ return $content;
 }
 add_filter('the_excerpt_rss', 'rss_post_thumbnail');
 add_filter('the_content_feed', 'rss_post_thumbnail');
+
+//キャプチャ（幅150）　browser-shot互換あり
+function api_sc_shot ($attributes) {
+	extract(shortcode_atts(array(
+		'url' => '',
+	), $attributes));
+	$imageUrl = sc_shot ($url);
+	if ($imageUrl == '') {
+		return '';
+	} else {
+		return '<div class="browser-shot"><a href="' . $url . '" target="_blank" ><img src="' . $imageUrl . '" alt="' . $url . '" ></a></div>';
+	}
+}
+function sc_shot ($url = ''){
+		return 'http://s.wordpress.com/mshots/v1/' . urlencode(clean_url($url)) . '?w=200';
+	}
+add_shortcode('browser-shot', 'api_sc_shot');
 
 ?>

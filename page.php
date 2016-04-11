@@ -9,10 +9,7 @@
         <div class="the_article">
           <div class="center">
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-            <p class="post-meta font-dosis center">
-              <span class="post-calendar"><i class="fa fa-calendar"></i> <?php the_date('Y/m/d'); ?></span><span class="post-category"><i class="fa fa-pencil"></i> <?php the_category(' / '); ?></span>
-            </p>
-            <div class="the_socialcount"><span><?php echo getsocialcount(); ?></span> shares<br />
+            <div class="the_socialcount"><span>PLEASE HAVE A SHARE!</span>
              <div class="likes"><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>&amp;t=チェック&nbsp;☞&nbsp;<?php the_title(); ?>" target="_blank"><i class="fa fa-facebook-square"></i> likes</a></div>
               <div class="tweets"><a href="http://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&text=チェック&nbsp;☞&nbsp;<?php the_title(); ?>" target="_blank"><i class="fa fa-twitter"></i> tweet</a></div>
               <div class="hatena"><a href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>" target="_blank"><i class="fa fa-hatena"></i> hatena</a></div>

@@ -17,6 +17,8 @@
 <meta name="twitter:site" content="@x93mg" />
 <meta name="twitter:creator" content="@x93mg" />
 <meta name="twitter:domain" content="sakairyo.tokyo" />
+<meta name="twitter:title" content="<?php if(is_single()){ wp_title(' # ', true, 'right'); } bloginfo('name');?>">
+<meta name="twitter:description" content="<?php the_excerpt(); ?>">
 <?php if(is_single()): ?><meta name="twitter:image" content="<?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), true); echo $img[0]; ?>" /><?php endif; ?>
 <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
@@ -86,6 +88,11 @@ $(document).ready(function(){
   $('.the_article img, .thumbnail img, .the_card img').removeAttr('height');
   $('.the_article_content ul').addClass('fa-ul');
   $('.the_article_content ul li').prepend('<i class="fa fa-check-circle fa-li"></i> ');
+  $('.booklink-powered-date').prepend('<i class="fa fa-heart"></i> ');
+  $('.booklink-detail').prepend('<i class="fa fa-pencil"></i> ');
+  $('.shoplinkamazon a, .shoplinkkindle a').prepend('<i class="fa fa-amazon fa-lg"></i> ');
+  $('.shoplinkrakuten a').prepend('<span style="font-family:verdana;font-weight:200%">R</span> ');
+  $('.shoplinkseven a').prepend('<span style="font-family:verdana;font-weight:200%">7</span> ');
   $(".the_body").css('margin-top',parseInt($(".the_header").css('height'))+20+'px');
   $(".the_sidebar").css('height',$("the_content").css('height'));
   $(".the_card").append('<div class="colorbar flex-center"><div></div><div></div><div></div><div></div><div></div></div>');
@@ -102,13 +109,13 @@ else if(navigator.userAgent.indexOf('iPad') > -1)
 <link rel="author" href="https://plus.google.com/112695717769946796221" />
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" media="screen" />
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/base.css" media="screen" />
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(''); ?>>
 <title>
 <?php
-  if(is_single()){
+  if(is_single()||is_page()){
     wp_title(' # ', true, 'right');
   }
   bloginfo('name');
@@ -164,5 +171,5 @@ else if(navigator.userAgent.indexOf('iPad') > -1)
 <header class="center margin-auto">
   <img id="identification" src="http://gadgtwit.appspot.com/twicon/x93mg/original" />
   <h1 id="title"><a href="http://sakairyo.tokyo/"><span class="rainbow">RYO OF THE DAY</span></a></h1>
-  <p class="font-dosis">Wonderful Life in TOKYO.</p>
+  <p class="font-dosis">The Backpack Web-creator is in Tokyo.</p>
 </header>
