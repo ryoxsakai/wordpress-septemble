@@ -6,4 +6,4 @@ Hello world. **"Septemble"** is the Wordpress Theme for the blog [RYO OF THE DAY
 
 Like this.
 
-![RYO OF THE DAY](http://capture.heartrails.com/400x300/round?http://sakairyo.tokyo/)
+![RYO OF THE DAY](https://www.dropbox.com/s/om92eak3m3sennh/sakairyotokyo.png?dl=0)
